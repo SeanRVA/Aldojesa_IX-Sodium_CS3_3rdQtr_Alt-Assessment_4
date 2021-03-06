@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Alternative Assessment 4</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+  </head>
+  <body onload="setTheme()">
+    <div class="panel">
+      <p class="mini_text">Current Date is:</p>
+      <p class="mini_text" id="date"></p>
+      <label class="container"> Allow Randomization
+        <input type="checkbox" id="randomize" onchange="showRandom()">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container"> Whole Numbers Only
+        <input type="checkbox" id="whole_numbers" checked="checked" onchange="intOrFloat()">
+        <span class="checkmark"></span>
+      </label>
+      <div class="panel_title">
+        <h2>
+          Some Maths
+        </h2>
+      </div>
+      <div class="inner_panel">
+        <br>
+        <input type="text" class="input_box" id="num1" value="" placeholder="Input Number 1 Here" onblur="this.value = numberCheck(this.value)">
+        <input type="text" class="input_box" id="num2" value="" placeholder="Input Number 2 Here" onblur="this.value = numberCheck(this.value)">
+        <input type="text" class="input_box" id="random_range" value="" placeholder="Randomizer Range min:max" style="display: none">
+        <input type="button" class="button" id="randomizer" value="Randomize Input Numbers" style="display: none" onclick="randomizeNumbers()">
+        <input type="submit" class="button" id="submit_numbers" value="Submit Numbers" onclick="submitNumbers()">
+        <input type="button" class="button" value="Clear Input" onclick="clearInput()">
+        <br>
+        <br>
+        <input type="button" class="button" id="power" style="display: none" value="" onclick="raiseToThePower(numberValues[0], numberValues[1])">
+        <input type="button" class="button" id="squareroot1" style="display: none" value="" onclick="squareRoot(numberValues[0])">
+        <input type="button" class="button" id="squareroot2" style="display: none" value="" onclick="squareRoot(numberValues[1])">
+      </div>
+    </div>
+    <script src="javascript/script.js" charset="utf-8"></script>
+  </body>
+</html>
