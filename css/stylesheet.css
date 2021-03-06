@@ -1,0 +1,131 @@
+:root {
+  --backgroundColour: ;
+  --borderColour: ;
+  --midgroundColour: ;
+  --midgroundColourAlt: ;
+  --foregroundColor: ;
+  --foregroundColorAlt: ;
+  --foregroundColorAlt2: ;
+  --fontColour: ;
+  --fontColourAlt: ;
+  --fontColourAlt2: ;
+  --fontColourAlt3: ;
+}
+body {
+  background-color: var(--backgroundColour);
+  font-family: 'Inconsolata', monospace, 'Monaco', 'Consolas', 'Courier New', 'Courier';
+  color: var(--fontColour);
+}
+.panel {
+  background-color: var(--midgroundColour);
+  border: 2px solid var(--borderColour);
+  width: 50%;
+  padding: 2%;
+  position: fixed;
+  z-index: 1;
+  font-family: inherit;
+}
+.inner_panel {
+  background-color: var(--midgroundColour);
+  width: 90%
+  padding: 1%;
+  position: relative;
+  z-index: 2;
+  font-family: inherit;
+}
+.panel_title {
+  width: 100%;
+  background-color: inherit;
+  color: var(--fontColour);
+  z-index: inherit + 1;
+  text-align: center;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  background-color: var(--foregroundColorAlt);
+}
+.container:hover input ~ .checkmark {
+  background-color: var(--foregroundColorAlt2);
+}
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+  left: 4.1px;
+  top: 2px;
+  width: 1px;
+  height: 6px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.input_box {
+  width: 100%;
+  font-family: inherit;
+  background-color: var(--foregroundColor);
+  color: var(--fontColour);
+  border-style: none;
+  margin: 1px;
+}
+.input_box:hover {
+  background-color: var(--foregroundColorAlt);
+}
+.input_box:focus {
+  background-color: var(--foregroundColorAlt2);
+}
+.input_box::placeholder, .input_box::-webkit-input-placeholder {
+  color: var(--fontColourAlt);
+  opacity: 1;
+}
+.input_box::placeholder:focus, .input_box::-webkit-input-placeholder {
+  color: var(--fontColourAlt2);
+  opacity: 1;
+}
+.button {
+  width: 100%;
+  font-family: inherit;
+  background-color: inherit;
+  color: inherit;
+  border-style: none;
+  margin: 1px;
+}
+.button:hover {
+  background-color: var(--midgroundColourAlt);
+  color: var(--fontColourAlt3);
+}
+.mini_text {
+  font-size: 10px;
+}
