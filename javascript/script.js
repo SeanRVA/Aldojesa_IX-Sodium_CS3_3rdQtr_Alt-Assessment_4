@@ -113,7 +113,7 @@ function randomizeNumbers() {
     num2 = rangedRandomizer(randomRange);
   } else {
     var range = document.getElementById('random_range').value.trim();
-    var acceptableKeys = "1234567890:";
+    var acceptableKeys = "+-1234567890:";
     acceptableKeys = acceptableKeys.split("");
     for (var i = 0; i < range.length; i++) {
       var key = range[i];
